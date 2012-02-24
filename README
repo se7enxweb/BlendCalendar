@@ -1,4 +1,8 @@
 BlendCalendar provides an extended time/date data type that allows for the 
 handling of recurring events. 
 
+This extension adds a new datatype, a new fetch, admin templates to provide an 
+AJAX-based calendar control, and some supporting components. 
+
 TO INSTALL:
+see doc/INSTALL
