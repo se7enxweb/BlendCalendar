@@ -44,8 +44,8 @@
 	{def $subview_type='line'}
 {/if}
 
-{def 
-	$curr_time = currentdate() 
+{def
+	$curr_time = currentdate()
 	$show_month = $curr_time|datetime('custom','%n')
 	$show_year = $curr_time|datetime('custom','%Y')
 	$show_day = $curr_time|datetime('custom','%j')
@@ -86,7 +86,7 @@
 
 {if $display_boxes}
 
-{def    
+{def
 	$calendar_node = fetch('content','node',hash('node_id',$subtree))
     $url_reload=concat( $calendar_node.url_alias, "/(day)/", $show_day, "/(month)/", $show_month, "/(year)/", $show_year, "/offset/2")
     $url_back=concat( $calendar_node.url_alias,  "/(month)/", sub($show_month, 1), "/(year)/", $show_year)
@@ -130,7 +130,7 @@
 					 $col_end = or( eq( $dayofweek, 6 ), eq( $counter, $days ) )}
 				{if or( eq( $counter, 1 ), eq( $dayofweek, 0 ) )}
 					<tr class="week">
-				{/if}			
+				{/if}
 				{* If the month doesn't start at the start of the week, add in some empty squares *}
 				{if and($counter|eq(1), $dayofweek|gt(0))}
 					{for 0 to $dayofweek|sub(1) as $i}
@@ -147,7 +147,7 @@
 					{$counter}
 				{/if}
 					</span>
-					
+
 					{if and($display_in_boxes, is_set($events[$day_timestamp]))}
 					{foreach $events[$day_timestamp] as $event}
 					<p class="event">
@@ -156,19 +156,19 @@
 					{/foreach}
 					{/if}
 				</td>
-				
+
 				{if and($counter|eq($days), $dayofweek|lt(6))}
 					{for $dayofweek|sum(1) to 6 as $i}
 					<td class="nonmonth-day">&nbsp;</td>
 					{/for}
 				{/if}
-				
+
 				{if $col_end}
 					</tr>
 				{/if}
 				{set $counter=inc( $counter )}
 			{/while}
-		
+
 		</tbody>
 	</table>
 </div>
