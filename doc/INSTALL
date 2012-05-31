@@ -61,6 +61,13 @@ Installation
    Customize or override the settings in blendcalendar/settings/content.ini.append.php to match 
    your installation. 
    
+   In your public siteaccess override.ini.append.php include the following override:
+   [blend_calendar]
+   Source=node/view/full.tpl
+   MatchFile=full/ajaxinterface.tpl
+   Subdir=templates
+   Match[class_identifier]=<your-blend-calendar-class-name>
+
 7. Clear caches
 
    Clear all caches (from admin 'Setup' tab or from command line).

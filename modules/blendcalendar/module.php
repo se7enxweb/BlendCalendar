@@ -17,6 +17,10 @@ $ViewList['30boxes'] = array(
         'subtree'=>'SubTree',
         'parent'=>'Parent'
         ) );
+$ViewList['fetch'] = array(
+    'script'        => 'fetch.php',
+    'ui_context'    => 'administration'
+);
 
 $FunctionList = array();
 $FunctionList['results'] = array( );
