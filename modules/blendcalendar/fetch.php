@@ -27,7 +27,7 @@ if( $http->hasVariable( 'categories' ) )
 }
 
 $result = CalendarEvent::getEventsInRange(
-        	$ini->variable( "BlendCalendarSettings", "EventClassAttributeIds" ),
+        	$ini->variable( "BlendCalendarSettings", "QuickViewClassAttributeId" ),
         	$filter[ 'start' ],
         	$filter[ 'end' ]
 		);
