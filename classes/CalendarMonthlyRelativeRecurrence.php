@@ -66,10 +66,18 @@ class CalendarMonthlyRelativeRecurrence extends CalendarRecurrence
             
             //What day did this month start on?
             $monthFirstDow = date('w', $monthStart);
+            if ($monthFirstDow == 0 && $monthFirstDow != $dow) $monthFirstDow = 7; // Fix if month start with sunday
+            if ($dow == 0 && $monthFirstDow != $dow) $dow = 7; // Fix if this day is sunday
             
             if($dow < $monthFirstDow)
             {
                 $offset = 0;
+            }
+            
+            // Fix January not start from monday
+            if (intval($currWeek) == 1 && $monthFirstDow > 1)
+            {
+                $offset = $monthStartWeek;
             }
             
             $thisWeekNum = ($currWeek - $monthStartWeek + $offset);

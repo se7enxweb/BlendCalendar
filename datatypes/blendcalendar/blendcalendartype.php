@@ -13,7 +13,7 @@
 */
 
 include_once( "kernel/classes/ezdatatype.php" );
-
+include_once( 'kernel/common/i18n.php' );
 //require_once( 'extension/gcalendar/datatypes/gcalendar/gcalendar.php' );
 
 

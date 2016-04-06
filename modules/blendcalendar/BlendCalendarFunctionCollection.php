@@ -15,12 +15,12 @@ class BlendCalendarFunctionCollection
         {
             $endTime = strtotime($endTime);
         }
-        else
+        else if(!$endTime && !is_numeric($endTime))
         {
             $endTime = strtotime(date('n/t/Y', $startTime)); //End of the current month
         }
         
-        $resultType = CalendarEvent::FETCH_DAYS;
+        $resultType = CalendarEvent::FETCH_LINEAR;
         
         if ($groupBy == 'day') {
         	$resultType = CalendarEvent::FETCH_DAYS;
