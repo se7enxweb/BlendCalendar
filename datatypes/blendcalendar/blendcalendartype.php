@@ -107,7 +107,7 @@ class BlendCalendarType extends eZDataType
             case 'ONCE':
                 if(!strtotime($singleDate))
                 {
-                    $contentObjectAttribute->setValidationError( ezi18n( 'kernel/classes/datatypes',
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                          "Please enter a valid occurrence date." ) );
         
                     return eZInputValidator::STATE_INVALID;        
@@ -116,7 +116,7 @@ class BlendCalendarType extends eZDataType
             case 'WEEK':
                 if(!$weekdays)
                 {
-                    $contentObjectAttribute->setValidationError( ezi18n( 'kernel/classes/datatypes',
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                          "Please select at least one day of the week." ) );
         
                     return eZInputValidator::STATE_INVALID;        
@@ -133,7 +133,7 @@ class BlendCalendarType extends eZDataType
             
             if($fromTimestamp > $toTimestamp && $rangeEndType != 'NULL')
             {
-                $contentObjectAttribute->setValidationError( ezi18n( 'kernel/classes/datatypes',
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                      "The End Date must be before the Start Date." ) );
     
                 return eZInputValidator::STATE_INVALID;        
